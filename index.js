@@ -1,5 +1,6 @@
 var Twitter = require('twitter');
 
+// put in secrets here
 var client = new Twitter({
   consumer_key: '',
   consumer_secret: '',

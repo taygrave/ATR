@@ -3,6 +3,8 @@ var file = "post.db";
 var exists = fs.existsSync(file);
 var secret = require('./secret');
 
+// creation and initial seeding file for sqlite database. Get your own info. :P
+
 if(!exists) {
   console.log("Creating DB file.");
   fs.openSync(file, "w");
@@ -19,7 +21,7 @@ db.serialize(function() {
 
 var stmt = db.prepare("INSERT INTO Posts VALUES (?)");
 
-// the below loop is what you want to change if you'd rather the information from a different file/format, whatever. 
+// the below loop is what you want to change if you'd rather the information from a different file/format, whatever.
 
 for (var i = 0; i < secret.tweet_roulette.length; i++) {
   stmt.run(secret.tweet_roulette[i]);

@@ -19,6 +19,8 @@ db.serialize(function() {
 
 var stmt = db.prepare("INSERT INTO Posts VALUES (?)");
 
+// the below loop is what you want to change if you'd rather the information from a different file/format, whatever. 
+
 for (var i = 0; i < secret.tweet_roulette.length; i++) {
   stmt.run(secret.tweet_roulette[i]);
 }
